@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Ex4_1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+   $("#a").mouseenter(function(){
+      $("h1").text("Your choice: Chrome")
+   })
+   
+   $("#a").mouseleave(function(){
+      $("h1").text("Which is the web browser you perfer?")
+   })
+   
+   $("#b").mouseenter(function(){
+      $("h1").text("Your choice: Internet Explorer")
+   })
+   
+   $("#b").mouseleave(function(){
+      $("h1").text("Which is the web browser you perfer?")
+   })
+   
+   $("#c").mouseenter(function(){
+      $("h1").text("Your choice: Safari")
+   })
+   
+   $("#c").mouseleave(function(){
+      $("h1").text("Which is the web browser you perfer?")
+   })
+   
+   
+})
+</script>
+
+</head>
+
+<body>
+<h1>Which is the web browser you prefer?</h1>
+<p id="a">(a) Chrome</p>
+<p id="b">(b) Internet Explorer</p>
+<p id="c">(c) Safari</p>
+
+</body>
+</html>
