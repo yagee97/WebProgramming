@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!--definition of simple elements -->
+	<xs:element name="banner" type="xs:string" />
+	<xs:element name="date" type="xs:string" />
+	<xs:element name="holiday" type="xs:string" />
+	<xs:element name="time" type="xs:string" />
+	<xs:element name="description" type="xs:string" />
+
+	<!--definition of attributes -->
+	<xs:attribute name="name" />
+	<xs:attribute name="chan" />
+	<xs:attribute name="vtr" />
+	<xs:attribute name="rating" />
+	<xs:attribute name="language" />
+
+	<!--definition of complex elements -->
+	<xs:element name="programslot">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="time" />
+				<xs:element name="title">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute ref="rating" />
+								<xs:attribute ref="language" />
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="description" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute ref="vtr" use="optional" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="day">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="date" />
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="holiday" />
+					<xs:element ref="programslot" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="channel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="banner" />
+				<xs:element ref="day" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="chan" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="tvschedule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="channel" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="name" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

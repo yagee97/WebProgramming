@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!--definition of simple elements -->
+	<xs:element name="headline" type="xs:string" />
+	<xs:element name="byline" type="xs:string" />
+	<xs:element name="lead" type="xs:string" />
+	<xs:element name="body" type="xs:string" />
+	<xs:element name="notes" type="xs:string" />
+
+	<!--definition of attributes -->
+	<xs:attribute name="author" />
+	<xs:attribute name="editor" />
+	<xs:attribute name="date" />
+	<xs:attribute name="edition" />
+
+	<!--definition of complex elements -->
+	<xs:element name="newspaper">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="article" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+		
+	<xs:element name="article">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="headline" />
+				<xs:element ref="byline" />
+				<xs:element ref="lead" />
+				<xs:element ref="body" />
+				<xs:element ref="notes" />
+			</xs:sequence>
+
+			<xs:attribute ref="author" use="required" />
+			<xs:attribute ref="editor" use="optional" />
+			<xs:attribute ref="date" use="optional" />
+			<xs:attribute ref="edition" use="optional" />
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

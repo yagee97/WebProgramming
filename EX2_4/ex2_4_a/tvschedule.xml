@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tvschedule
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="tvshedule.xsd">
+	<channel>
+		<banner>banner site</banner>
+		<day>
+			<date>2018-09-13</date>
+			<holiday>2018-09-15</holiday>
+			<programslot>
+				<time>09:50AM</time>
+				<title>hello Go Web</title>
+				<description>introduce this course</description>
+			</programslot>
+		</day>
+	</channel>
+</tvschedule>

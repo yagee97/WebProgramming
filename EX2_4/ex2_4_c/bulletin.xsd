@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!--definition of simple elements -->
+	<xs:element name="name" type="xs:string"/>
+	<xs:element name="title" type="xs:string"/>
+	<xs:element name="message" type="xs:string"/>
+	<xs:element name="writerID" type="xs:string"/>
+	<xs:element name="writerName" type="xs:string"/>
+
+	<!--definition of attributes -->
+
+	<!--definition of complex elements -->
+	<xs:element name="board">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="name" />
+				<xs:element ref="article" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="article">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="title" />
+				<xs:element ref="message" />
+				<xs:element ref="writerID" />
+				<xs:element ref="writerName" />
+				<xs:element ref="reply" minOccurs="0" maxOccurs="unbounded">
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="reply">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="message" />
+				<xs:element ref="writerID" />
+				<xs:element ref="writerName" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

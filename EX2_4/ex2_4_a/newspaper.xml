@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<newspaper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="newspaper.xsd">
+	<article>
+		<headline>hi</headline>
+		<byline>hi</byline>
+		<lead>hi</lead>
+		<body>hi</body>
+		<notes>hi</notes>
+	</article>
+</newspaper>
