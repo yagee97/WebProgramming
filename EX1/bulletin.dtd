@@ -1,0 +1,8 @@
+<!ELEMENT board (name,(article+))>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT article (title,message,writerID,writerName,(reply*))>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT message (#PCDATA)>
+<!ELEMENT writerID (#PCDATA)>
+<!ELEMENT writerName (#PCDATA)>
+<!ELEMENT reply (message,writerID,writerName)>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE board SYSTEM "bulletin.dtd">
+<board>
+	<name>BOARD</name>
+	<article>
+		<title>GOWEB</title>
+		<message>FIGHTING</message>
+		<writerID>201635838</writerID>
+		<writerName>YEJI</writerName>
+		<reply>
+			<message>HEY</message>
+			<writerID>201635838</writerID>
+			<writerName>YEJI</writerName>
+		</reply>
+	</article>
+</board>
