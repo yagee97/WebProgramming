@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>EX4_3</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#explorer").mouseover(function() {
+			$(this).animate({
+				height : '250px',
+				width : '250px'
+			})
+		})
+		$("#explorer").mouseout(function() {
+			$(this).animate({
+				height : '150px',
+				width : '150px'
+			})
+		})
+		$("#chrome").mouseover(function() {
+			$(this).animate({
+				height : '250px',
+				width : '250px'
+			})
+		})
+		$("#chrome").mouseout(function() {
+			$(this).animate({
+				height : '150px',
+				width : '150px'
+			})
+		})
+		$("#safari").mouseover(function() {
+			$(this).animate({
+				height : '250px',
+				width : '250px'
+			})
+		})
+		$("#safari").mouseout(function() {
+			$(this).animate({
+				height : '150px',
+				width : '150px'
+			})
+		})
+		$("#firefox").mouseover(function() {
+			$(this).animate({
+				height : '250px',
+				width : '250px'
+			})
+		})
+		$("#firefox").mouseout(function() {
+			$(this).animate({
+				height : '150px',
+				width : '150px'
+			})
+		})
+
+		$("#explorer").click(function() {
+			$("#brower").text("Explorer");
+		})
+		$("#chrome").click(function() {
+			$("#brower").text("Chrome");
+		})
+		$("#safari").click(function() {
+			$("#brower").text("Safari");
+		})
+		$("#firefox").click(function() {
+			$("#brower").text("Firefox");
+		})
+
+	});
+</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><p>My favorite web browser:</p></td>
+			<td><p id="brower"></p></td>
+		</tr>
+	</table>
+
+	<img id="explorer" src="Explorer.png" width="150px">
+	<img id="chrome" src="chrome.jpg" width="150px">
+	<img id="safari" src="safari.jpg" width="150px">
+	<img id="firefox" src="firefox.jpg" width="150px">
+</body>
+</html>
