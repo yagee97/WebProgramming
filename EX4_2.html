@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>EX4_2</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#btn1").click(function(){
+		$("#a").css("color",$("input").val());
+	});
+	$("#btn2").click(function(){
+		$("#b").css("color",$("input").val());
+	});
+	$("#btn3").click(function(){
+		$("#c").css("color",$("input").val());
+	});
+});
+</script>
+</head>
+<body>
+<h1 id="a">Header 1</h1>
+<h1 id="b">Header 2</h1>
+<h1 id="c">Header 3</h1>
+<p> Choose the header color:<input type="color"></p>
+<button id="btn1">Change1</button>
+<button id="btn2">Change2</button>
+<button id="btn3">Change3</button>
+</body>
+</html>
