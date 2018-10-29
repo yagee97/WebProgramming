@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>ex5_2</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	function loadXMLDoc() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				func1(this);
+			}
+		};
+		xmlhttp.open("GET", "cd_catalog.xml", true);
+		xmlhttp.send();
+	}
+
+	function func1(xml) {
+		var i;
+		var xmlDoc = xml.responseXML;
+		var table = "";
+		var text="";
+		var searchArtist = $("input").val();
+		var arr = xmlDoc.getElementsByTagName("CD");
+
+		for (i = 0; i < arr.length; i++) {
+			if (arr[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue == searchArtist) {
+				table += "<tr><th>TITLE</th><td>"+
+				arr[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue
+				+"</td></tr>"+
+				 "<tr><th>ARTIST</th><td>"+
+	             arr[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+	             "</td></tr>"+
+	             "<tr><th>COUNTRY</th><td>"+
+	             arr[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue +
+	             "</td></tr>"+
+	             "<tr><th>COMPANY</th><td>"+
+	             arr[i].getElementsByTagName("COMPANY")[0].childNodes[0].nodeValue +
+	             "</td></tr>"+
+	             "<tr><th>PRICE</th><td>"+
+	             arr[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue +
+	             "</td></tr>"+
+	             "<tr><th>YEAR</th><td>"+
+	             arr[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue +
+	             "</td></tr>";
+	             break;
+			}else{
+				table = "";
+				text ="none";
+			}
+		}
+
+		document.getElementById("table2").innerHTML = table;
+		document.getElementById("none").innerHTML = text;
+	}
+</script>
+
+</head>
+<body>
+		<h4><b>Enter Artist Name:</b></h4>
+	<input type="text">
+	<button type="button" onclick="loadXMLDoc()">Search</button>
+	<table id="table1">
+	<tr><td><p>CD Information:</p></td>
+	<td><p id="none"></p></td>
+	</tr>
+	</table>
+	<table id ="table2"></table>
+
+</body>
+</html>
