@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>EX6_2</title>
+<style>body{font-family:times;}</style>
+</head>
+<body>
+<script>
+function loadXMLDoc(filename) {
+    xhttp=new XMLHttpRequest();
+    xhttp.open("GET",filename,false);
+    xhttp.send();
+    return xhttp.responseXML;
+}
+function println(value) {
+    if (value != undefined) document.write(value);
+    document.write("<br/>");
+}
+function getChildElementsByName(node,name) {
+    var n=node.firstChild, nn=[];
+    while (n!=null) {
+        if (n.nodeType==Node.ELEMENT_NODE && n.nodeName==name)
+            nn[nn.length]=n;
+        n=n.nextSibling;
+    }
+    return nn;
+}
+</script>
+<script>
+
+var xmlDoc=loadXMLDoc("books.xml");
+var books=xmlDoc.getElementsByTagName("book");
+console.log(books.length);
+
+for (b=0; b<books.length; b++) {
+    document.write("<p>Book "+b);
+    document.write("<table border=1 cellpadding=2>\n")
+    var names = ["title", "author", "year"];
+   for (i=0; i<names.length; i++) {
+       var x=getChildElementsByName(books[b],names[i]);
+       console.log(x.length);
+       for (j=0; j<x.length; j++) {
+            document.write("<tr><td>"+names[i]+"</td><td>");
+            document.write(x[j].firstChild.nodeValue+"</td></tr>\n");
+       }
+   }
+   document.write("</table>\n");
+}
+</script>
+<script>
+
+var xmlDoc=loadXMLDoc("cd_catalog.xml");
+var cds=xmlDoc.getElementsByTagName("CD");
+console.log(cds.length);
+
+for (b=0; b<cds.length; b++) {
+    var x=getChildElementsByName(cds[b],"YEAR");
+    var year=x[0].firstChild.nodeValue;
+    if (year < 1990) continue;
+
+    document.write("<p>CD "+b);
+    document.write("<table border=1 cellpadding=2>\n")
+    var names = ["TITLE", "ARTIST", "YEAR"];
+    for (i=0; i<names.length; i++) {
+        var x=getChildElementsByName(cds[b],names[i]);
+        console.log(x.length);
+        for (j=0; j<x.length; j++) {
+            document.write("<tr><td>"+names[i]+"</td><td>");
+            document.write(x[j].firstChild.nodeValue+"</td></tr>\n");
+        }
+    }
+    document.write("</table>\n");
+}
+</script>
+</body>
+</html>
