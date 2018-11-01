@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>EX6_1</title>
+</head>
+<body>
+	<script>
+		function firstChild(node) {
+			var n = node.firstChild;
+			while (n != null && n.nodeType != Node.ELEMENT_NODE) {
+				n = n.nextSibling;
+			}
+			return n;
+		}
+		function lastChild(node) {
+			var n = node.lastChild;
+			while (n != null && n.nodeType != Node.ELEMENT_NODE) {
+				n = n.previousSibling;
+			}
+			return n;
+		}
+		function nextSibling(node) {
+			var n = node.nextSibling;
+			while (n != null && n.nodeType != Node.ELEMENT_NODE) {
+				n = n.nextSibling;
+			}
+			return n;
+		}
+		function prevSibling(node) {
+			var n = node.previousSibling;
+			while (n != null && n.nodeType != Node.ELEMENT_NODE) {
+				n = n.previousSibling;
+			}
+			return n;
+		}
+	</script>
+	<script>
+		function firstChild2(node) {
+			var n = node.firstChild;
+			while (n != null && n.nodeType == Node.TEXT_NODE
+					&& n.nodeValue.trim().length <= 0) {
+				n = n.nextSibling;
+			}
+			return n;
+		}
+		function lastChild2(node) {
+			var n = node.lastChild;
+			while (n != null && n.nodeType == Node.TEXT_NODE
+					&& n.nodeValue.trim().length <= 0) {
+				n = n.previousSibling;
+			}
+			return n;
+		}
+		function nextSibling2(node) {
+			var n = node.nextSibling;
+			while (n != null && n.nodeType == Node.TEXT_NODE
+					&& n.nodeValue.trim().length <= 0) {
+				n = n.nextSibling;
+			}
+			return n;
+		}
+		function prevSibling2(node) {
+			var n = node.previousSibling;
+			while (n != null && n.nodeType == Node.TEXT_NODE
+					&& n.nodeValue.trim().length <= 0) {
+				n = n.previousSibling;
+			}
+			return n;
+		}
+	</script>
+	<script>
+
+		function childNodes(node) {
+			var nn = [], n = firstChild(node);
+			while (n != null) {
+				nn[nn.length] = n;
+				n = nextSibling(n);
+			}
+			return nn;
+		}
+	</script>
+	<script>
+		var xmlDoc = loadXMLDoc("books.xml");
+		var x = xmlDoc.getElementsByTagName("book")[0];
+
+		println(firstChild(x).childNodes[0].nodeValue);
+		println(lastChild(x).childNodes[0].nodeValue);
+		y = x.firstChild;
+		println(nextSibling(y).childNodes[0].nodeValue);
+		y = x.lastChild;
+		println(prevSibling(y).childNodes[0].nodeValue);
+
+		document.write("<p>");
+		println(firstChild2(x).childNodes[0].nodeValue);
+		println(lastChild2(x).childNodes[0].nodeValue);
+		y = x.firstChild;
+		println(nextSibling2(y).childNodes[0].nodeValue);
+		y = x.lastChild;
+		println(prevSibling2(y).childNodes[0].nodeValue);
+
+		document.write("<p>");
+		z = childNodes(x);
+		println(z.length);
+
+		function loadXMLDoc(filename) {
+			xhttp = new XMLHttpRequest();
+			xhttp.open("GET", filename, false);
+			xhttp.send();
+			return xhttp.responseXML;
+		}
+		function println(value) {
+			if (value != undefined)
+				document.write(value);
+			document.write("<br/>");
+		}
+	</script>
+</body>
+</html>
