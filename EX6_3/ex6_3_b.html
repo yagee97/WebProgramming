@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>ex6_3_b</title>
+</head>
+<body>
+	<p id="result"></p>
+	
+	<script>
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (xhttp.readyState == 4 && xhttp.status == 200) {
+				var xmlDoc = xhttp.responseXML;
+
+				print(xmlDoc.getElementsByTagName('TITLE'), xmlDoc
+						.getElementsByTagName('ARTIST'), xmlDoc
+						.getElementsByTagName('PRICE'), xmlDoc
+						.getElementsByTagName('YEAR'))
+			}
+		};
+		xhttp.open("GET", "cd_catalog.xml", true);
+		xhttp.send();
+
+		function print(title, artist, price, year) {
+			var table = '<table border="1"><tr><th>TITLE</th><th>ARTIST</th><th>PRICE</th><th>YEAR</th></tr>';
+
+			for (i = 0; i < title.length; i++) {
+				if (parseInt(year[i].childNodes[0].nodeValue) <= 1995) {
+					price[i].childNodes[0].nodeValue = parseFloat(price[i].childNodes[0].nodeValue) * 0.9;
+
+					table += '<tr><td>' + title[i].childNodes[0].nodeValue
+							+ '</td><td>';
+					table += artist[i].childNodes[0].nodeValue + '</td><td>';
+					table += price[i].childNodes[0].nodeValue + '</td><td>';
+					table += year[i].childNodes[0].nodeValue + '</td></tr>';
+				}
+			}
+			table += '</table>';
+
+			document.getElementById('result').innerHTML = table;
+		}
+	</script>
+
+</body>
+</html>
