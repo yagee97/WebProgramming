@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+	name="viewport" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>Welcome to Gachon Honey Bee!</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- CSS Files -->
+<link href="assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+
+<!--     Fonts and icons     -->
+<link
+	href="https://fonts.googleapis.com/css?family=Jua&amp;subset=korean"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+<style>
+h5, h4, h1, body {
+	font-family: 'Jua', sans-sarif
+}
+
+label {
+	font-family: 'Jua', sans-sarif;
+	color: black;
+}
+</style>
+
+<script type="text/javascript">
+        function goReplace(flag, type) {
+            location.href = 'board.html?flag=' + flag + '&type=' + type;
+        }
+
+        function setType(type){
+            var address = "http://www.gachon.ac.kr/etc/food.jsp?gubun=" + type;
+            return address;
+        }
+    </script>
+
+</head>
+
+<body>
+	<nav
+		class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg">
+		<div class="container">
+			<div class="navbar-translate">
+				<a class="navbar-brand" href="index.html"> Gachon Honey BEE </a>
+
+				<nav class="navbar fixed-top navbar-light bg-warning">
+					<div class="container">
+						<button class="navbar-toggler" type="button"
+							data-toggle="collapse" data-target="#navbarTogglerDemo01"
+							aria-controls="navbarTogglerDemo01" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-bar navbar-kebab"></span> <span
+								class="navbar-toggler-bar navbar-kebab"></span> <span
+								class="navbar-toggler-bar navbar-kebab"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+							<a class="navbar-brand" href="index.html">Gachon Honey BEE</a>
+							<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+								<li class="nav-item active"><a class="nav-link"
+									href="index.html">Home <span class="sr-only">(current)</span>
+								</a></li>
+								<li class="nav-item"><a class="nav-link"
+									href="#study_room">Study Room</a></li>
+								<li class="nav-item"><a class="nav-link disabled"
+									href="Restaurant_list.html">Restaurant</a></li>
+								<li class="nav-item"><a class="nav-link disabled"
+									href="#school_food">School food</a></li>
+							</ul>
+						</div>
+
+						<!-- login or out based on firebase -->
+						<div class="collapse navbar-collapse">
+							<ul class="navbar-nav ml-auto">
+								<li class="dropdown nav-item"><a id="profileMain" href="#"
+									class="dropdown-toggle nav-link" data-toggle="dropdown"> <i
+										class="material-icons">apps</i> Not Signed-In!
+								</a>
+									<div class="dropdown-menu dropdown-with-icons">
+										<a id="profileMenu1" href="login.html" class="dropdown-item">Sign
+											in</a> <a id="profileMenu2" href="create_account.html"
+											class="dropdown-item">Create Account</a>
+									</div></li>
+
+							</ul>
+						</div>
+
+					</div>
+				</nav>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="page-header header-filter" data-parallax="true"
+		style="background-image: url('assets/img/background.jpg')">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 ml-auto mr-auto">
+					<div class="brand text-center">
+						<h1>Gachon Honey BEE</h1>
+					</div>
+					<div class="col-md-4 ml-auto mr-auto">
+						<table>
+							<tr>
+								<td><input type="text" id="search" class="form-control"
+									placeholder="Search"></td>
+								<td>
+									<button type="submit"
+										class="btn btn-white btn-just-icon btn-round">
+										<i class="material-icons">search</i>
+									</button>
+								</td>
+							</tr>
+						</table>
+
+					</div>
+				</div>
+			</div>
+			<div class="brand text-center">
+				<br> <br> <br> <br>
+				<table align="center">
+					<tr>
+						<td><img src="assets/img/shelter.png" width="110px"
+							height="110px" style="margin-right: 20px"></td>
+						<td><img src="assets/img/restaurant.png" width="110px"
+							height="110px" style="margin-right: 20px"></td>
+						<td><img src="assets/img/school.png" width="110px"
+							height="110px"></td>
+					</tr>
+					<tr>
+						<td><h4 style="margin-right: 20px">study room</h4></td>
+						<td><h4 style="margin-right: 20px">restaurant</h4></td>
+						<td><h4 style="margin-right: 20px">school food</h4></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="main main-raised" data-parallax="true">
+		<div class="container">
+			<div class="section text-center" id=study_room>
+				<h2 class="title" style="font-family: 'Jua', sans-sarif">"Study
+					Room"</h2>
+				<h5>가천대학교 내에 유용한 스터디룸들을 소개합니다. 다양한 과의 학생들과 후기를 나눌 수 있고, 평점도 매길
+					수 있습니다.</h5>
+				<table align="center">
+					<tr>
+						<td>
+							<div class="card" style="width: 20rem; margin-right: 25px;"
+								onclick="goReplace('0','study')">
+								<img class="card-img-top" src="assets/img/ragom.jpg"
+									alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">
+									<h5>
+										<b>라곰</b>
+									</h5>
+									가천관 1층 로비에 위치한 <b>라곰(Ragom)</b>입니다. 휴식을 위한 아늑한 쇼파와 공부를 위한 편안한
+									테이블과 의자들이 놓여있습니다.<br>
+									</p>
+								</div>
+
+							</div>
+						</td>
+						<td>
+							<div class="card" style="width: 20rem; margin-right: 25px;"
+								onclick="goReplace('1','study')">
+								<img class="card-img-top" src="assets/img/eureka.jpg"
+									alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">
+									<h5 id="eureka">
+										<b>유레카</b>
+									</h5>
+									중앙도서관 1층에 위치한 <br> <b>유레카(Eureka)</b>입니다. <br>휴식을 포함한
+									여러 스터디 공간으로 사용할 수 있습니다.
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="card" style="width: 20rem;"
+								onclick="goReplace('2','study')">
+								<img class="card-img-top" src="assets/img/global_zone.jpg"
+									alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">
+									<h5 id="global">
+										<b>글로벌존</b>
+									</h5>
+									전자정보도서관에 위치한 <b>글로벌존(Global-zone)</b>입니다. 외국인들과 대화를 나눌 수 있으며,
+									앉아서 쉴 수 있는 쇼파도 놓여있습니다.
+									</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="section text-center" id="restaurant">
+				<h2 class="title" style="font-family: 'Jua', sans-sarif">"Restaurant"</h2>
+				<h5>
+					가천대학교 내에 맛있는 음식점들을 소개합니다.<br> 비전타워 또는 가천관 지하 1층에 위치한 음식점들이며,
+					다양한 후기 또한 살펴보실 수 있습니다.
+				</h5>
+				<a href="Restaurant_list.html"
+					class="badge badge-pill badge-default"
+					style="width: 100px; height: 30px"><label class="text-center"
+					style="margin-top: 5px">더보기</label></a>
+				<table align="center">
+					<tr>
+						<td>
+							<div class="card" style="width: 20rem; margin-right: 25px;"
+								onclick="goReplace('0','restaurant')">
+								<img class="card-img-top" src="assets/img/Res_sincup.jpg"
+									alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">
+									<h5>
+										<b>신의 한컵</b>
+									</h5>
+									비전타워 지하2층에 위치한 <b>신의 한컵</b>입니다. 주 메뉴로는 매콤한 라이스와 누들이 있습니다.가격은
+									3500원~6000원 선으로 저렴한 편입니다.
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="card" style="width: 20rem; margin-right: 25px;"
+								onclick="goReplace('1','restaurant')">
+								<img class="card-img-top" src="assets/img/Res_bongus.jpg"
+									alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">
+									<h5>
+										<b>봉구스</b>
+									</h5>
+									비전타워 지하1층에 위치한 <b>봉구스</b>입니다.밥버거의 다양한 맛을 고를 수 있습니다. 가격은
+									3500원~5000원 선으로 저렴한 편입니다
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="card" style="width: 20rem;"
+								onclick="goReplace('2','restaurant')">
+								<img class="card-img-top" src="assets/img/Res_tomato.jpg"
+									alt="Card image cap">
+								<div class="card-body">
+									<p class="card-text">
+									<h5>
+										<b>토마토 도시락</b>
+									</h5>
+									비전타워 지하3층에 위치한<br> <b>토마토도시락</b>입니다.주된 메뉴는 도시락 등 밥 종류이며
+									가격은 4000원~6000원 선입니다.
+									</p>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="section text-center" id="school_food">
+			<h2 class="title" style="font-family: 'Jua', sans-sarif">"School
+				food"</h2>
+			<h5 style="font-family: 'Jua', sans-sarif">
+				가천대학교의 학식들을 소개합니다.<br> 비전타워, 창조관 등의 오늘의 학식을 살펴볼 수 있습니다.
+			</h5>
+			<table align="center">
+				<tr>
+					<td>
+						<div class="card" style="width: 20rem; margin-right: 25px;"
+							data-toggle="modal" data-target="#visionTowerSF">
+							<img class="card-img-top" src="assets/img/cafeteria_vision.jpg"
+								alt="Card image cap">
+							<div class="card-body">
+								<p class="card-text">
+								<h5>
+									<b>비전타워</b>
+								</h5>
+								<b>비전타워</b>학식 입니다.
+								</p>
+							</div>
+						</div>
+					<td>
+						<div class="card" style="width: 20rem; margin-right: 25px;"
+							data-toggle="modal" data-target="#changjoGuanSF">
+							<img class="card-img-top" src="assets/img/cafeteria_chang.jpg"
+								alt="Card image cap">
+							<div class="card-body">
+								<p class="card-text">
+								<h5>
+									<b>창조관</b>
+								</h5>
+								<b>창조관</b>학식입니다.
+								</p>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="card" style="width: 20rem;" data-toggle="modal"
+							data-target="#AreumGuanSF">
+							<img class="card-img-top" src="assets/img/cafeteria_arm.jpg"
+								alt="Card image cap">
+							<div class="card-body">
+								<p class="card-text">
+								<h5>
+									<b>아름관</b>
+								</h5>
+								<b>아름관</b>학식입니다.
+								</p>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<!-- visionTower SchoolFood Modal -->
+	<div class="modal fade" id="visionTowerSF" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document"
+			style="max-width: 100%; width: auto; display: table;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="visionTowerSFTitle">"비전타워 학식"</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<iframe src="http://www.gachon.ac.kr/etc/food.jsp?gubun=C"
+						style="display: block; width: 800px; height: 100vh"></iframe>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- changjoGuan SchoolFood Modal -->
+	<div class="modal fade" id="changjoGuanSF" tabindex="-1" role="dialog"
+		aria-labelledby="changjoGuanSFTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document"
+			style="max-width: 100%; width: auto; display: table;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="changjoGuanSFTitle">"창조관 학식"</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<iframe src="http://www.gachon.ac.kr/etc/food.jsp?gubun=A"
+						style="display: block; width: 800px; height: 100vh"></iframe>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- changjoGuan SchoolFood Modal -->
+	<div class="modal fade" id="AreumGuanSF" tabindex="-1" role="dialog"
+		aria-labelledby="AreumGuanSFTitle" aria-hidden="true">
+		<div class="modal-dialog" role="document"
+			style="max-width: 100%; width: auto; display: table;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="AreumGuanSFTitle">"아름관 학식"</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<iframe src="http://www.gachon.ac.kr/etc/food.jsp?gubun=B"
+						style="display: block; width: 800px; height: 100vh"></iframe>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer footer-default">
+		<div class="container">
+			<nav class="float-left">
+				<ul>
+					<li><a href="https://www.creative-tim.com/"> Creative Tim
+					</a></li>
+				</ul>
+			</nav>
+			<div class="copyright float-right">
+				&copy;
+				<script>
+                document.write(new Date().getFullYear())
+            </script>
+				, made with <i class="material-icons">favorite</i> by <a
+					href="https://www.creative-tim.com/" target="blank">Creative
+					Tim</a> for a better web.
+			</div>
+		</div>
+	</footer>
+</body>
+<!--   Core JS Files   -->
+<script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="assets/js/core/bootstrap-material-design.min.js"
+	type="text/javascript"></script>
+<script src="assets/js/plugins/moment.min.js"></script>
+<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+<script src="assets/js/plugins/bootstrap-datetimepicker.js"
+	type="text/javascript"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+<!--  Google Maps Plugin  -->
+<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+<script src="assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+
+<!--get session form Firebase-->
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAKsZQ8RnJ-8Ax_yJ8iqUVqMaapAhYwjv8",
+        authDomain: "gachon-honey-bee.firebaseapp.com",
+        databaseURL: "https://gachon-honey-bee.firebaseio.com",
+        projectId: "gachon-honey-bee",
+        storageBucket: "gachon-honey-bee.appspot.com",
+        messagingSenderId: "946258217070"
+    };
+    firebase.initializeApp(config);
+    firebaseEmailAuth = firebase.auth();
+    firebaseDatabase = firebase.database();
+
+    //세션 체크 함수 시작하기!
+    userSessionCheck();
+
+
+    //유저가 로그인 했는지 안했는지 확인해주는 함수
+    function userSessionCheck() {
+
+        //로그인이 되어있으면 - 유저가 있으면, user를 인자값으로 넘겨준다.
+        firebaseEmailAuth.onAuthStateChanged(function (user) {
+            if (user) {
+                //조회 - 데이터 베이스에 저장된 닉네임을 현재 접속되어 있는 user의 pk key 값을 이용해서 가져오기
+                firebaseDatabase.ref("users/" + user.email).once('value').then(function (snapshot) {
+                    //자바스크립트 dom 선택자를 통해서 네비게이션 메뉴의 엘리먼트 변경해주기
+                    document.getElementById("profileMain").textContent = "환영합니다! " + "님";
+                    document.getElementById("profileMenu1").textContent = "Check profile";
+                    document.getElementById("profileMenu1").href = "profile.html";
+                    document.getElementById("profileMenu2").textContent = "Sign out";
+                    document.getElementById("profileMenu2").href = "logout.html";
+
+                    //name = snapshot.val().name;   //유저 닉네임은 계속 쓸거기 때문에 전역변수로 할당
+                    loginUserKey = snapshot.key;  //로그인한 유저의 key도 계속 쓸 것이기 때문에 전역변수로 할당
+                    userInfo = snapshot.val(); //snapshot.val()에 user 테이블에 있는 해당 개체 정보가 넘어온다. userInfo에 대입!
+
+                    //alert(userInfo.userid);  //uid는 db에서 user 테이블의 각 개체들의 pk 인데, 이 값은 인증에서 생성된 아이디의 pk 값과 같다. *중요!
+                    return true
+                });
+
+            } else {
+                //$('#comment').val("로그인 하시면 사람들의 감사 리스트를 보실 수 있습니다. 로그인 해주실꺼죠^^?");
+                return false
+            }
+        });
+    }
+
+</script>
+</html>

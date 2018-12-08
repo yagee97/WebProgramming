@@ -1,0 +1,160 @@
+{
+  "studyroom": [
+    {
+      "name": "라곰(Ragom)",
+      "where": "가천관 1층 로비에 위치한 라곰(Ragom)입니다.",
+      "condition": "누구나 가능!",
+      "description": "휴식을 위한 아늑한 쇼파와 공부를 위한 편안한 테이블과 의자들이 놓여있습니다.",
+      "open": "10:00AM",
+      "close": "7:00PM",
+      "image": "assets/img/ragom.jpg",
+      "image2": "assets/img/ragom2.png",
+      "image3": ""
+    },
+    {
+      "name": "유레카(Eureka)",
+      "where": "중앙도서관 1층에 위치한 유레카(Eureka)입니다.",
+      "condition": "가천대학교 재학생",
+      "description": "휴식을 포함한 여러 스터디 공간으로 사용할 수 있습니다.",
+      "open": "9:00AM",
+      "close": "9:00PM(학기중)",
+      "image": "assets/img/eureka.jpg",
+      "image2": "assets/img/eureka2.jpg",
+      "image3": ""
+    },
+    {
+      "name": "글로벌존(GlobalZone)",
+      "where": "전자정보도서관에 위치한 글로벌존(Global-zone)입니다.",
+      "condition": "누구나 가능!",
+      "description": "외국인들과 대화를 나눌 수 있으며, 앉아서 쉴 수 있는 쇼파도 놓여있습니다.",
+      "open": "9:00AM",
+      "close": "8:00PM",
+      "image": "assets/img/global_zone.jpg",
+      "image2": "assets/img/global_zone2.jpg",
+      "image3": ""
+    }
+  ],
+  "restaurant": [
+    {
+      "name": "신의 한컵",
+      "where": "비전타워 지하2층에 위치한 신의 한컵입니다. ",
+      "condition": " 주 메뉴로는 매콤한 라이스와 누들이 있습니다",
+      "description": "가격은 3500원~6000원 선으로 저렴한 편입니다.",
+      "open": "9:00AM",
+      "close": "9:00PM",
+      "image": "assets/img/Res_sincup.jpg",
+      "image2": "assets/img/Res_sincup2.jpg",
+      "image3": "assets/img/Res_sincup3.jpg"
+    },
+    {
+      "name": "봉구스 밥버거",
+      "where": "비전타워 지하1층에 위치한 봉구스밥버거 입니다. ",
+      "condition": "밥버거의 다양한 맛을 고를 수 있습니다.",
+      "description": "가격은 3500원~5000원 선으로 저렴한 편입니다 ",
+      "open": "9:00AM",
+      "close": "10:00PM",
+      "image": "assets/img/Res_bongus.jpg",
+      "image2": "assets/img/Res_bongus2.jpg",
+      "image3": "assets/img/Res_bongus3.jpg"
+    },
+    {
+      "name": "토마토 도시락",
+      "where": "프리덤 광장에 위치한 토마토도시락입니다.",
+      "condition": " 주된 메뉴는 도시락 등 밥 종류입니다.",
+      "description": "가격은 4000원~6000원 선입니다.",
+      "open": "9:30AM",
+      "close": "8:00PM",
+      "image": "assets/img/Res_tomato.jpg",
+      "image2": "assets/img/Res_tomato2.jpg",
+      "image3": "assets/img/Res_tomato3.jpg"
+    },
+    {
+      "name": "피자투어",
+      "where": "비전타워 지하1층에 위치한 토마토도시락입니다.",
+      "condition": " 주된 메뉴는 여러 피자종류입니다. 다양한 사이즈로 즐길 수 있습니다.",
+      "description": "가격은 6000원~선입니다.",
+      "open": "11:00AM",
+      "close": "8:00PM",
+      "image": "assets/img/Res_pizzatour.jpg",
+      "image2": "assets/img/Res_pizzatour2.jpg",
+      "image3": "assets/img/Res_pizzatour3.jpg"
+    },
+    {
+      "name": "치미치미",
+      "where": "비전타워 지하1층에 위치한 치미치미입니다.",
+      "condition": " 주된 메뉴는 치킨브리또, 소고기브리또입니다.",
+      "description": "가격은 4000원~5000원 선으로 착한 가격입니다.",
+      "open": "9:00AM",
+      "close": "10:00PM",
+      "image": "assets/img/Res_chimi.jpg",
+      "image2": "assets/img/Res_chimi2.jpg",
+      "image3": "assets/img/Res_chimi3.jpg"
+    },
+    {
+      "name": "포밥(Phobob)",
+      "where": "비전타워 지하2층에 위치한 포밥(Phobob)입니다.",
+      "condition": " 주된 메뉴는 베트남 쌀국수입니다.",
+      "description": "가격은 4000원~6000원 선입니다.",
+      "open": "9:00AM",
+      "close": "8:00PM",
+      "image": "assets/img/Res_phobob.jpg",
+      "image2": "assets/img/Res_phobob2.jpg",
+      "image3": "assets/img/Res_phobob3.jpg"
+    },
+    {
+      "name": "쩡이네",
+      "where": "비전타워 지하2층에 위치한 쩡이네 입니다.",
+      "condition": "한식과 분식을 주로 판매합니다.",
+      "description": "가격은 5000원~8000원 선입니다.",
+      "open": "9:00AM",
+      "close": "10:00PM",
+      "image": "assets/img/Res_jjeong.jpg",
+      "image2": "assets/img/Res_jjeong2.jpg",
+      "image3": "assets/img/Res_jjeong3.jpg"
+    },
+    {
+      "name": "맘보",
+      "where": "비전타워 지하2층에 위치한 맘보 입니다.",
+      "condition": " 주된 메뉴는 제육철판볶음이나 낙삼철판볶음 입니다.",
+      "description": "가격은 5000원~7000원 선입니다.",
+      "open": "9:30AM",
+      "close": "9:00PM",
+      "image": "assets/img/Res_mambo.jpg",
+      "image2": "assets/img/Res_mombo2.jpg",
+      "image3": "assets/img/Res_mombo3.jpg"
+    },
+    {
+      "name": "오늘 오면",
+      "where": "비전타워 지하3층에 위치한 오늘오면 입니다.",
+      "condition": " 주된 메뉴는 물냉면, 비빔냉면입니다.",
+      "description": "가격은 4000원~6000원 선입니다.",
+      "open": "10:00AM",
+      "close": "8:00PM",
+      "image": "assets/img/Res_omyeon.jpg",
+      "image2": "assets/img/Res_omyen2.jpg",
+      "image3": "assets/img/Res_omyen3.jpg"
+    },
+    {
+      "name": "오니기리와 이규동",
+      "where": "프리덤광장 에 위치한 오니기리와 이규동 입니다.",
+      "condition": " 주된 메뉴는 규카레동, 스팸마요동 입니다.",
+      "description": "가격은 4000원~6000원 선입니다.",
+      "open": "9:30AM",
+      "close": "8:00PM",
+      "image": "assets/img/Res_igyudong.jpg",
+      "image2": "assets/img/Res_igyudong2.jpg",
+      "image3": "assets/img/Res_igyudong3.jpg"
+    },
+    {
+      "name": "차이나 스푼",
+      "where": "비전타워 지하3층 에 위치한 차이나 스푼 입니다.",
+      "condition": " 주된 메뉴는 해물짬뽕, 짜장면 입니다.",
+      "description": "가격은 5500원~8000원 선입니다.",
+      "open": "9:30AM",
+      "close": "8:00PM",
+      "image": "assets/img/Res_chinaspoon.jpg",
+      "image2": "assets/img/Res_china2.jpg",
+      "image3": "assets/img/Res_chinaspoon3.jpg"
+    }
+  ]
+}
